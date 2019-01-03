@@ -6,18 +6,19 @@ import flush from 'styled-jsx/server';
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
-
+    
+    
     return (
       <html lang="en" dir="ltr">
-        <Head title="正觉工场">
+        <Head>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
             name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no adjust=no"
           />
           {/* PWA primary color */}
-          <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
+          <meta name="theme-color" content={pageContext? pageContext.theme.palette.primary.main : ''} />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
@@ -60,8 +61,9 @@ MyDocument.getInitialProps = ctx => {
   let pageContext;
   const page = ctx.renderPage(Component => {
     const WrappedComponent = props => {
+      
       pageContext = props.pageContext;
-      return <Component {...props} />;
+      return <Component {...props}/>;
     };
 
     WrappedComponent.propTypes = {
@@ -80,7 +82,7 @@ MyDocument.getInitialProps = ctx => {
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: pageContext.sheetsRegistry.toString() }}
+          dangerouslySetInnerHTML={{ __html: pageContext? pageContext.sheetsRegistry.toString(): '' }}
         />
         {flush() || null}
       </React.Fragment>

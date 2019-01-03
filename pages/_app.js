@@ -16,10 +16,7 @@ class MyApp extends App {
   constructor(props) {
     super(props);
     this.pageContext = getPageContext();
-    this.state = {
-      status: false,
-      open: false,
-    }
+   
   }
 
   componentDidMount() {
@@ -74,24 +71,10 @@ class MyApp extends App {
             <CssBaseline />
             {/* Pass pageContext to the _document though the renderPage enhancer
                 to render collected styles on server side. */}
-            <Component pageContext={this.pageContext} {...pageProps}  app={this.props.app} status={this.state.status} />
+            <Component pageContext={this.pageContext} {...pageProps} />
           </MuiThemeProvider>
         </JssProvider>
-        <Snackbar
-         
-          open={this.state.open}
-          autoHideDuration={6000}
-          message={<span id="message-id">网络链接失败</span>}
-          action={[
-            <IconButton
-              key="close"
-              aria-label="Close"
-              color="inherit"
-            >
-              <CloseIcon />
-            </IconButton>,
-          ]}
-        />
+       
       </Container>
     );
   }
