@@ -3,10 +3,6 @@ import App, { Container } from 'next/app';
 import Head from 'next/head';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from '../src/getPageContext';
@@ -88,5 +84,8 @@ MyApp.getInitialProps = async function() {
     app: appData,
   }
 }
+
+
+
 
 export default MyApp;
