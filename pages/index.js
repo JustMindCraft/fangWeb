@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import PcHead from '../src/components/PcHead';
 import PcFooter from '../src/components/PcFooter';
+import dataProvider from '../src/services/dataProvider';
+
 
 const styles = theme => ({
   '@global': {
@@ -201,9 +203,6 @@ class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 
 

@@ -146,7 +146,7 @@ class Market extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    
     return (
       <React.Fragment>
         <PcHead />

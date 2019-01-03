@@ -137,7 +137,7 @@ class PcHead extends React.Component {
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
           
           <Button component="a" href="/" size="large">正觉工场</Button>
-            
+           
             
           </Typography>
           <Button component="a" href="/">首页</Button>
@@ -146,6 +146,7 @@ class PcHead extends React.Component {
             登录
           </Button>
         </Toolbar>
+        
       </AppBar>
      
     );
@@ -155,6 +156,8 @@ class PcHead extends React.Component {
 PcHead.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
 
 
 
